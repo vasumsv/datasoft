@@ -84,11 +84,12 @@ export default function ServicesList() {
                 <div className="relative glass-morphism rounded-2xl p-6 lg:p-8 border-2 border-white/40 group-hover:border-gold-300/60 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-start space-x-6">
                   <div className="flex-shrink-0">
                     <motion.div
-                      className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center shadow-lg"
+                      className="rounded-2xl flex items-center justify-center"
+                      style={{ width: '96px', height: '96px' }}
                       whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <img src={service.image} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                      <img src={service.image} alt={service.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
                     </motion.div>
                   </div>
 

@@ -93,11 +93,12 @@ export default function Courses() {
 
                 <div className="relative z-10 space-y-6">
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg"
+                    className="flex items-center justify-center rounded-2xl mb-2"
+                    style={{ width: '96px', height: '96px' }}
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img src={course.image} alt={course.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={course.image} alt={course.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
                   </motion.div>
 
                   <div>

@@ -315,11 +315,12 @@ export default function ProductsPage() {
 
                 <div className="relative glass-morphism rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg mb-4"
+                    className="flex items-center justify-center rounded-2xl mb-4 mx-auto"
+                    style={{ width: '96px', height: '96px' }}
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img src={category.image} alt={category.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={category.image} alt={category.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
                   </motion.div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">

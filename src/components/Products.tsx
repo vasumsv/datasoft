@@ -107,11 +107,12 @@ export default function Products() {
 
               <div className="relative h-full glass-morphism rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white/40 group-hover:border-gold-300/60">
                 <motion.div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl mb-4 shadow-lg"
+                  className="flex items-center justify-center rounded-xl mb-4"
+                  style={{ width: '96px', height: '96px' }}
                   whileHover={{ rotate: 360, scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <img src={product.image} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src={product.image} alt={product.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
                 </motion.div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
