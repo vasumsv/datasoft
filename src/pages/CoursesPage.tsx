@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import FloatingActions from '../components/FloatingActions';
 import {
@@ -14,8 +13,6 @@ import {
   CheckCircle,
   ArrowRight,
   Phone,
-  MapPin,
-  Mail,
   MessageCircle,
   Zap,
   Target,
@@ -23,9 +20,6 @@ import {
 } from 'lucide-react';
 
 export default function CoursesPage() {
-  const [formData, setFormData] = useState({ name: '', phone: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const courses = [
     {
       image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Computer%20Basics.png',
@@ -160,17 +154,6 @@ export default function CoursesPage() {
       rating: 5,
     },
   ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you! We will contact you soon.');
-      setFormData({ name: '', phone: '' });
-    }, 1500);
-  };
 
   return (
     <div className="min-h-screen">
@@ -659,99 +642,6 @@ export default function CoursesPage() {
                 <MessageCircle size={20} className="relative z-10" />
                 <span className="relative z-10">WhatsApp Now</span>
               </motion.a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="contact-form" className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Get in <span className="bg-gradient-to-r from-gold-600 to-bronze-600 bg-clip-text text-transparent">Touch</span>
-              </h2>
-              <p className="text-xl text-gray-600">
-                Fill the form below and we'll contact you soon
-              </p>
-            </div>
-
-            <div className="glass-morphism rounded-3xl p-8 lg:p-12 shadow-2xl border-2 border-white/50 space-y-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 bg-white/80 border-2 border-gold-300/50 rounded-xl focus:border-gold-500 focus:outline-none transition-all text-gray-900 font-medium"
-                    placeholder="Enter your name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-5 py-4 bg-white/80 border-2 border-gold-300/50 rounded-xl focus:border-gold-500 focus:outline-none transition-all text-gray-900 font-medium"
-                    placeholder="Enter your phone number"
-                    pattern="[0-9]{10}"
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center space-x-2 px-8 py-5 bg-gradient-to-r from-gold-500 via-gold-600 to-bronze-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all text-lg disabled:opacity-50"
-                  whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
-                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-                >
-                  <span>{isSubmitting ? 'Submitting...' : 'Submit Enquiry'}</span>
-                  {!isSubmitting && <ArrowRight size={20} />}
-                </motion.button>
-              </form>
-
-              <div className="pt-8 border-t border-gold-200/30 space-y-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Quick Contact</h3>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <a
-                    href="tel:+919876543210"
-                    className="flex items-center space-x-3 px-5 py-4 bg-white/60 rounded-xl hover:bg-white/80 transition-all border border-gold-200/50"
-                  >
-                    <Phone className="w-5 h-5 text-gold-600" />
-                    <span className="text-gray-700 font-medium">+91 98765 43210</span>
-                  </a>
-
-                  <a
-                    href="mailto:info@datasoftcomputers.com"
-                    className="flex items-center space-x-3 px-5 py-4 bg-white/60 rounded-xl hover:bg-white/80 transition-all border border-gold-200/50"
-                  >
-                    <Mail className="w-5 h-5 text-gold-600" />
-                    <span className="text-gray-700 font-medium">Email Us</span>
-                  </a>
-                </div>
-
-                <div className="flex items-start space-x-3 px-5 py-4 bg-white/60 rounded-xl border border-gold-200/50">
-                  <MapPin className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
-                  <span className="text-gray-700 font-medium">
-                    Main Road, Ranebennur, Karnataka, India
-                  </span>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>

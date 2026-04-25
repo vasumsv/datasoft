@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Cpu } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -58,13 +58,12 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center space-x-3 mb-6 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-bronze-500 rounded-xl blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative w-12 h-12 bg-gradient-to-br from-gold-500 to-bronze-600 rounded-xl flex items-center justify-center">
-                  <Cpu className="w-6 h-6 text-white" />
-                </div>
-              </div>
+            <div className="flex items-center space-x-3 mb-6">
+              <img
+                src="https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/datasoft-logo.png"
+                alt="Datasoft Computers"
+                className="h-12 w-auto object-contain"
+              />
               <div>
                 <h3 className="text-white font-bold text-lg">Datasoft Computers</h3>
                 <p className="text-xs text-gray-400">Since 1999</p>

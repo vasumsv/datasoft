@@ -1,15 +1,10 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Phone,
   MapPin,
   MessageCircle,
   Clock,
-  Send,
-  CheckCircle,
-  AlertCircle,
   Navigation,
-  Info,
   Laptop,
   Wrench,
   Camera,
@@ -21,24 +16,6 @@ import {
 import FloatingActions from '../components/FloatingActions';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    requirement: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const requirements = [
-    { value: 'training', label: 'Computer Training', icon: GraduationCap },
-    { value: 'laptop-purchase', label: 'Laptop Purchase', icon: Laptop },
-    { value: 'repair-service', label: 'Repair Service', icon: Wrench },
-    { value: 'cctv', label: 'CCTV Installation', icon: Camera },
-    { value: 'other', label: 'Other', icon: Info },
-  ];
-
   const faqs = [
     {
       question: 'Do you provide laptop repair services?',
@@ -327,197 +304,6 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-sand/10 via-cream/20 to-sand/10"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center mb-16 space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-              Send Us a{' '}
-              <span className="bg-gradient-to-r from-gold-600 to-bronze-600 bg-clip-text text-transparent">
-                Message
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill out the form and we'll get back to you as soon as possible
-            </p>
-          </motion.div>
-
-          <div className="max-w-3xl mx-auto">
-            <motion.div
-              className="glass-morphism rounded-3xl p-8 lg:p-12 shadow-2xl border-2 border-white/50"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              {submitStatus === 'success' && (
-                <motion.div
-                  className="mb-8 p-6 bg-green-50 border-2 border-green-200 rounded-2xl flex items-start space-x-3"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-green-900 mb-1">Message Sent Successfully!</h4>
-                    <p className="text-green-700">
-                      Thank you for contacting us. We'll get back to you shortly.
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-
-              {submitStatus === 'error' && (
-                <motion.div
-                  className="mb-8 p-6 bg-red-50 border-2 border-red-200 rounded-2xl flex items-start space-x-3"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-1">Oops! Something went wrong</h4>
-                    <p className="text-red-700">Please try again or contact us directly.</p>
-                  </div>
-                </motion.div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    className={`w-full px-5 py-4 bg-white/80 border-2 ${
-                      errors.name ? 'border-red-300' : 'border-gold-300/50'
-                    } rounded-xl focus:border-gold-500 focus:outline-none transition-all text-gray-900 font-medium`}
-                    placeholder="Enter your name"
-                  />
-                  {errors.name && (
-                    <motion.p
-                      className="mt-2 text-sm text-red-600 flex items-center space-x-1"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                    >
-                      <AlertCircle size={14} />
-                      <span>{errors.name}</span>
-                    </motion.p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={`w-full px-5 py-4 bg-white/80 border-2 ${
-                      errors.phone ? 'border-red-300' : 'border-gold-300/50'
-                    } rounded-xl focus:border-gold-500 focus:outline-none transition-all text-gray-900 font-medium`}
-                    placeholder="Enter your phone number"
-                  />
-                  {errors.phone && (
-                    <motion.p
-                      className="mt-2 text-sm text-red-600 flex items-center space-x-1"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                    >
-                      <AlertCircle size={14} />
-                      <span>{errors.phone}</span>
-                    </motion.p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Requirement *
-                  </label>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {requirements.map((req) => (
-                      <motion.button
-                        key={req.value}
-                        type="button"
-                        onClick={() => handleInputChange('requirement', req.value)}
-                        className={`flex items-center space-x-3 px-5 py-4 rounded-xl border-2 transition-all font-medium ${
-                          formData.requirement === req.value
-                            ? 'bg-gradient-to-r from-gold-500 to-bronze-600 text-white border-gold-500 shadow-lg'
-                            : 'bg-white/80 text-gray-700 border-gold-300/50 hover:border-gold-400'
-                        }`}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <req.icon
-                          size={20}
-                          className={
-                            formData.requirement === req.value ? 'text-white' : 'text-gold-600'
-                          }
-                        />
-                        <span>{req.label}</span>
-                      </motion.button>
-                    ))}
-                  </div>
-                  {errors.requirement && (
-                    <motion.p
-                      className="mt-2 text-sm text-red-600 flex items-center space-x-1"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                    >
-                      <AlertCircle size={14} />
-                      <span>{errors.requirement}</span>
-                    </motion.p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message (Optional)
-                  </label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    rows={5}
-                    className="w-full px-5 py-4 bg-white/80 border-2 border-gold-300/50 rounded-xl focus:border-gold-500 focus:outline-none transition-all text-gray-900 font-medium resize-none"
-                    placeholder="Tell us more about your requirements"
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center space-x-2 px-8 py-5 bg-gradient-to-r from-gold-500 via-gold-600 to-bronze-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all text-lg disabled:opacity-50"
-                  whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
-                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <motion.div
-                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                      />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={20} />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
         </div>
       </section>
 
