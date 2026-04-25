@@ -314,11 +314,11 @@ export default function ServicesPage() {
 
                 <div className="relative h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40 bg-white/80 backdrop-blur-sm flex flex-col">
                   {/* Image top */}
-                  <div className="w-full overflow-hidden flex-shrink-0" style={{ height: '180px' }}>
+                  <div className="w-full flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-gold-50 to-bronze-50" style={{ height: '180px' }}>
                     <img
                       src={service.image}
                       alt={service.title}
-                      style={{ width: '100%', height: '180px', objectFit: 'cover' }}
+                      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }}
                     />
                   </div>
 
