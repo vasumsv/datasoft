@@ -1,28 +1,27 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Laptop, Wrench, Camera } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
-      icon: GraduationCap,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Services/Training.png',
       title: 'Training',
       description: 'Expert computer training in Basics, Tally, DTP, C/C++, and Spoken English for all skill levels.',
       gradient: 'from-gold-500 to-bronze-500',
     },
     {
-      icon: Laptop,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Services/Laptop%20Sales.png',
       title: 'Laptop Sales',
       description: 'New and refurbished laptops and desktops from top brands at the best prices in Ranebennur.',
       gradient: 'from-bronze-500 to-gold-600',
     },
     {
-      icon: Wrench,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Services/Repair%20Services.png',
       title: 'Repair Services',
       description: 'Professional laptop, desktop, and printer repair services with genuine parts and warranty.',
       gradient: 'from-gold-600 to-gold-500',
     },
     {
-      icon: Camera,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Services/CCTV%20Solutions.png',
       title: 'CCTV Solutions',
       description: 'Complete CCTV installation and monitoring solutions for homes and businesses.',
       gradient: 'from-gold-500 to-bronze-600',
@@ -79,11 +78,11 @@ export default function Services() {
               <div className="relative h-full glass-morphism rounded-2xl p-8 shadow-xl group-hover:shadow-2xl transition-all duration-500 border-2 border-white/40 group-hover:border-gold-300/60">
                 <div className="relative z-10 space-y-5">
                   <motion.div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl shadow-lg`}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-xl shadow-lg"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <service.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    <img src={service.image} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </motion.div>
 
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-gold-700 transition-colors">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Laptop, Monitor, Printer, Camera, Server, Wrench, Phone, Mail, MapPin, MessageCircle, CheckCircle, Clock, Award, Users, TrendingUp, Shield, Home, Building, Store, GraduationCap, Briefcase, ArrowRight, Zap, Headphones as HeadphonesIcon, Star, Quote } from 'lucide-react';
+import { Wrench, Phone, Mail, MapPin, MessageCircle, CheckCircle, Clock, Award, Users, TrendingUp, Shield, Home, Building, Store, GraduationCap, Briefcase, ArrowRight, Zap, Headphones as HeadphonesIcon, Star, Quote } from 'lucide-react';
 import FloatingActions from '../components/FloatingActions';
 
 export default function ServicesPage() {
@@ -14,42 +14,42 @@ export default function ServicesPage() {
 
   const services = [
     {
-      icon: Laptop,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/Laptop%20Repair.png',
       title: 'Laptop Repair',
       description: 'Fix hardware and software issues quickly and efficiently. Screen replacement, keyboard repair, battery replacement, and more.',
       color: 'from-gold-500 to-gold-600',
       features: ['Screen Replacement', 'Battery Issues', 'Software Problems', 'Data Recovery'],
     },
     {
-      icon: Monitor,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/Desktop%20Repair.png',
       title: 'Desktop Repair',
       description: 'Complete troubleshooting and repair services for desktop computers. Hardware upgrades and system optimization.',
       color: 'from-bronze-500 to-bronze-600',
       features: ['Hardware Repair', 'System Upgrade', 'Virus Removal', 'Performance Boost'],
     },
     {
-      icon: Printer,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/Printer%20Service%20Installation.png',
       title: 'Printer Service',
       description: 'Installation, repair, and maintenance for all printer types. Quick resolution of printing issues.',
       color: 'from-gold-600 to-bronze-500',
       features: ['Installation', 'Repair & Maintenance', 'Cartridge Issues', 'Network Setup'],
     },
     {
-      icon: Camera,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/CCTV%20Installation.png',
       title: 'CCTV Installation',
       description: 'Security solutions for homes and businesses. Complete installation with remote monitoring setup.',
       color: 'from-bronze-600 to-gold-500',
       features: ['Camera Installation', 'DVR Setup', 'Remote Access', 'Maintenance'],
     },
     {
-      icon: Server,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/Server%20Setup.png',
       title: 'Server Setup',
       description: 'Business IT infrastructure and server configuration. Network setup and cloud solutions.',
       color: 'from-gold-500 to-bronze-600',
       features: ['Server Installation', 'Network Config', 'Data Backup', 'Security Setup'],
     },
     {
-      icon: Wrench,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Services%20page%20/Annual%20Maintenance.png',
       title: 'Annual Maintenance',
       description: 'Regular maintenance for long-term performance. Preventive care to avoid costly repairs.',
       color: 'from-bronze-500 to-gold-600',
@@ -314,11 +314,11 @@ export default function ServicesPage() {
 
                 <div className="relative h-full glass-morphism rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
                   <motion.div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl shadow-lg mb-6`}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg mb-6"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <service.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    <img src={service.image} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </motion.div>
 
                   <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gold-700 transition-colors">

@@ -1,38 +1,38 @@
 import { motion } from 'framer-motion';
-import { BookOpen, Calculator, Image, Code, MessageSquare, ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 
 export default function Courses() {
   const courses = [
     {
-      icon: BookOpen,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Computer%20Basics.png',
       title: 'Computer Basics',
       description: 'Learn fundamentals of computers, Windows OS, MS Office, and internet basics.',
       duration: '2 Months',
       color: 'from-gold-500 to-gold-600',
     },
     {
-      icon: Calculator,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Tally.png',
       title: 'Tally',
       description: 'Master accounting software with GST, inventory management, and financial reports.',
       duration: '1.5 Months',
       color: 'from-bronze-500 to-bronze-600',
     },
     {
-      icon: Image,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/DTP.png',
       title: 'DTP',
       description: 'Desktop publishing with Photoshop, CorelDRAW, and professional design skills.',
       duration: '3 Months',
       color: 'from-gold-600 to-gold-700',
     },
     {
-      icon: Code,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/C%20%3A%20C%2B%2B.png',
       title: 'C / C++',
       description: 'Programming fundamentals with C and object-oriented concepts with C++.',
       duration: '4 Months',
       color: 'from-gold-500 to-bronze-600',
     },
     {
-      icon: MessageSquare,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Spoken%20English.png',
       title: 'Spoken English',
       description: 'Improve your English communication skills with interactive sessions.',
       duration: '2 Months',
@@ -93,11 +93,11 @@ export default function Courses() {
 
                 <div className="relative z-10 space-y-6">
                   <motion.div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${course.color} rounded-2xl shadow-lg`}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <course.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    <img src={course.image} alt={course.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </motion.div>
 
                   <div>

@@ -2,12 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import FloatingActions from '../components/FloatingActions';
 import {
-  BookOpen,
-  Calculator,
-  Image as ImageIcon,
-  Code,
-  Code2,
-  MessageSquare,
   Users,
   Award,
   Clock,
@@ -34,7 +28,7 @@ export default function CoursesPage() {
 
   const courses = [
     {
-      icon: BookOpen,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Computer%20Basics.png',
       title: 'Computer Basics',
       description: 'Learn fundamental computer skills, Windows OS, MS Office, typing, and essential applications for daily use',
       duration: '2 Months',
@@ -42,7 +36,7 @@ export default function CoursesPage() {
       highlights: ['Windows Basics', 'MS Office', 'Internet', 'Email'],
     },
     {
-      icon: Calculator,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Tally.png',
       title: 'Tally',
       description: 'Master accounting, GST, inventory management, and business finance using Tally ERP software',
       duration: '1.5 Months',
@@ -50,7 +44,7 @@ export default function CoursesPage() {
       highlights: ['GST Returns', 'Accounting', 'Invoicing', 'Reports'],
     },
     {
-      icon: ImageIcon,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/DTP.png',
       title: 'DTP (Desktop Publishing)',
       description: 'Learn professional design tools like Photoshop, CorelDRAW, and PageMaker for print and digital media',
       duration: '3 Months',
@@ -58,7 +52,7 @@ export default function CoursesPage() {
       highlights: ['Photoshop', 'CorelDRAW', 'PageMaker', 'Design'],
     },
     {
-      icon: Code,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/C%20%3A%20C%2B%2B.png',
       title: 'C Programming',
       description: 'Build strong programming logic, data structures, and understand core concepts of C language',
       duration: '3 Months',
@@ -66,7 +60,7 @@ export default function CoursesPage() {
       highlights: ['Programming Logic', 'Data Types', 'Functions', 'Pointers'],
     },
     {
-      icon: Code2,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/C%20%3A%20C%2B%2B.png',
       title: 'C++ Programming',
       description: 'Learn object-oriented programming, advanced coding concepts, and real-world applications',
       duration: '3 Months',
@@ -74,7 +68,7 @@ export default function CoursesPage() {
       highlights: ['OOP Concepts', 'Classes', 'Inheritance', 'Projects'],
     },
     {
-      icon: MessageSquare,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Courses/Spoken%20English.png',
       title: 'Spoken English',
       description: 'Improve communication skills, pronunciation, confidence, and fluency for career growth',
       duration: '2 Months',
@@ -311,11 +305,11 @@ export default function CoursesPage() {
 
                   <div className="relative z-10 space-y-6">
                     <motion.div
-                      className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${course.color} rounded-2xl shadow-lg`}
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg"
                       whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <course.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                      <img src={course.image} alt={course.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                     </motion.div>
 
                     <div>

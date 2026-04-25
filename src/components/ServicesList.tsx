@@ -1,34 +1,34 @@
 import { motion } from 'framer-motion';
-import { Wrench, Monitor, Printer, Server, Camera, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 export default function ServicesList() {
   const services = [
     {
-      icon: Wrench,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Laptop%20Repair.png',
       title: 'Laptop Repair',
       description: 'Screen replacement, battery issues, hardware upgrades',
       color: 'from-gold-500 to-gold-600',
     },
     {
-      icon: Monitor,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Desktop%20Repair.png',
       title: 'Desktop Repair',
       description: 'Component replacement, system upgrades, troubleshooting',
       color: 'from-bronze-500 to-bronze-600',
     },
     {
-      icon: Printer,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Printer%20Service.png',
       title: 'Printer Service',
       description: 'Repair, maintenance, cartridge replacement',
       color: 'from-gold-600 to-bronze-500',
     },
     {
-      icon: Server,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Server%20Setup.png',
       title: 'Server Setup',
       description: 'Configuration, maintenance, network solutions',
       color: 'from-gold-500 to-gold-700',
     },
     {
-      icon: Camera,
+      image: 'http://github.com/vasumsv/Vnova-Technologies/blob/main/vg%20computers/Professional%20services%20/CCTV%20Installation.png?raw=true',
       title: 'CCTV Installation',
       description: 'Complete installation, maintenance, monitoring',
       color: 'from-bronze-600 to-gold-600',
@@ -84,11 +84,11 @@ export default function ServicesList() {
                 <div className="relative glass-morphism rounded-2xl p-6 lg:p-8 border-2 border-white/40 group-hover:border-gold-300/60 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-start space-x-6">
                   <div className="flex-shrink-0">
                     <motion.div
-                      className={`w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                      className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center shadow-lg"
                       whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <service.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" strokeWidth={2.5} />
+                      <img src={service.image} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                     </motion.div>
                   </div>
 

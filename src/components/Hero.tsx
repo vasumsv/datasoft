@@ -150,67 +150,12 @@ export default function Hero() {
                 />
 
                 <div className="relative glass-morphism rounded-3xl p-8 shadow-2xl">
-                  <div className="aspect-square bg-gradient-to-br from-gold-500 via-bronze-500 to-gold-600 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-20">
-                      <div className="absolute inset-0"
-                        style={{
-                          backgroundImage: 'linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.3) 50%, transparent 52%), linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.3) 50%, transparent 52%)',
-                          backgroundSize: '20px 20px'
-                        }}
-                      />
-                    </div>
-
-                    <motion.div
-                      className="relative z-10 text-white text-center"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    >
-                      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" className="drop-shadow-2xl">
-                        <rect x="40" y="40" width="120" height="80" rx="8" stroke="white" strokeWidth="4" fill="white" fillOpacity="0.2"/>
-                        <rect x="55" y="55" width="90" height="50" rx="4" fill="white" fillOpacity="0.3"/>
-                        <circle cx="100" cy="140" r="5" fill="white"/>
-                        <rect x="80" y="145" width="40" height="3" fill="white"/>
-                        <rect x="60" y="148" width="80" height="8" rx="4" fill="white"/>
-                        <motion.g
-                          animate={{ opacity: [1, 0.5, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          <circle cx="70" cy="75" r="3" fill="white"/>
-                          <circle cx="85" cy="75" r="3" fill="white"/>
-                          <circle cx="100" cy="75" r="3" fill="white"/>
-                        </motion.g>
-                      </svg>
-
-                      <motion.p
-                        className="mt-6 font-bold text-xl tracking-wide"
-                        animate={{ opacity: [0.8, 1, 0.8] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        Technology Excellence
-                      </motion.p>
-                    </motion.div>
-
-                    {[...Array(6)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-3 h-3 bg-white rounded-full"
-                        style={{
-                          top: `${20 + Math.random() * 60}%`,
-                          left: `${20 + Math.random() * 60}%`,
-                        }}
-                        animate={{
-                          y: [-20, 20],
-                          x: [-10, 10],
-                          opacity: [0.3, 0.8, 0.3],
-                          scale: [1, 1.5, 1],
-                        }}
-                        transition={{
-                          duration: 3 + i * 0.5,
-                          repeat: Infinity,
-                          delay: i * 0.3,
-                        }}
-                      />
-                    ))}
+                  <div className="rounded-2xl flex items-center justify-center relative overflow-hidden" style={{ height: '360px' }}>
+                    <img
+                      src="https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/home%20page%20.png"
+                      alt="Technology Excellence"
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    />
                   </div>
                 </div>
               </div>

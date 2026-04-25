@@ -1,34 +1,34 @@
 import { motion } from 'framer-motion';
-import { Laptop, Monitor, Printer, Camera, Cpu, Tag, Sparkles } from 'lucide-react';
+import { Tag, Sparkles } from 'lucide-react';
 
 export default function Products() {
   const products = [
     {
-      icon: Laptop,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Laptops.png',
       title: 'Laptops',
       description: 'Latest models from HP, Dell, Lenovo, and more',
       color: 'from-gold-500 to-gold-600',
     },
     {
-      icon: Monitor,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Desktops.png',
       title: 'Desktops',
       description: 'Custom-built and branded desktop systems',
       color: 'from-bronze-500 to-bronze-600',
     },
     {
-      icon: Printer,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Printers.png',
       title: 'Printers',
       description: 'Inkjet, laser, and multifunction printers',
       color: 'from-gold-600 to-bronze-500',
     },
     {
-      icon: Camera,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/CCTV.png',
       title: 'CCTV',
       description: 'IP and analog security camera systems',
       color: 'from-gold-500 to-gold-700',
     },
     {
-      icon: Cpu,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Accessories.png',
       title: 'Accessories',
       description: 'Keyboards, mice, speakers, and more',
       color: 'from-bronze-600 to-gold-600',
@@ -107,11 +107,11 @@ export default function Products() {
 
               <div className="relative h-full glass-morphism rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white/40 group-hover:border-gold-300/60">
                 <motion.div
-                  className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${product.color} rounded-xl mb-4 shadow-lg`}
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl mb-4 shadow-lg"
                   whileHover={{ rotate: 360, scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <product.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                  <img src={product.image} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </motion.div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">

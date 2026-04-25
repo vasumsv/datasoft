@@ -2,28 +2,19 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import FloatingActions from '../components/FloatingActions';
 import {
-  Laptop,
-  Monitor,
-  Printer,
-  Camera,
-  HardDrive,
   Zap,
   Phone,
   Mail,
   MapPin,
-  MessageCircle,
   CheckCircle,
-  Award,
   Shield,
   Users,
   Store,
   Tag,
-  Star,
   ArrowRight,
   Sparkles,
   TrendingDown,
   Wrench,
-  Package,
 } from 'lucide-react';
 
 export default function ProductsPage() {
@@ -32,31 +23,31 @@ export default function ProductsPage() {
 
   const categories = [
     {
-      icon: Laptop,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Laptops.png',
       title: 'Laptops',
       description: 'New & Refurbished',
       color: 'from-gold-500 to-gold-600',
     },
     {
-      icon: Monitor,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Desktops.png',
       title: 'Desktops',
       description: 'Complete Systems',
       color: 'from-bronze-500 to-bronze-600',
     },
     {
-      icon: Printer,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Printers.png',
       title: 'Printers',
       description: 'All Types',
       color: 'from-gold-600 to-bronze-500',
     },
     {
-      icon: Camera,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/CCTV.png',
       title: 'CCTV Systems',
       description: 'Security Solutions',
       color: 'from-bronze-600 to-gold-500',
     },
     {
-      icon: HardDrive,
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Our%20Products/Accessories.png',
       title: 'Accessories',
       description: 'Parts & Peripherals',
       color: 'from-gold-500 to-bronze-600',
@@ -68,7 +59,7 @@ export default function ProductsPage() {
       name: 'HP Laptop',
       specs: 'Intel i5 | 8GB RAM | 256GB SSD',
       condition: 'New',
-      image: 'laptop-1',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/HP%20Laptop%20Intel%20i5%20%7C%208GB%20RAM%20%7C%20256GB%20SSD.png',
       price: 'Contact for price',
       badge: 'Latest Model',
     },
@@ -76,7 +67,7 @@ export default function ProductsPage() {
       name: 'Dell Desktop',
       specs: 'Intel i7 | 16GB RAM | 512GB SSD',
       condition: 'New',
-      image: 'desktop-1',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/Dell%20Desktop%20Intel%20i7%20%7C%2016GB%20RAM%20%7C%20512GB%20SSD.png',
       price: 'Contact for price',
       badge: 'Best Seller',
     },
@@ -84,7 +75,7 @@ export default function ProductsPage() {
       name: 'Lenovo ThinkPad',
       specs: 'Intel i5 | 8GB RAM | 256GB SSD',
       condition: 'Refurbished',
-      image: 'laptop-2',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/Lenovo%20ThinkPad%20Intel%20i5%20%7C%208GB%20RAM%20%7C%20256GB%20SSD%20%20.png',
       price: 'Best Value',
       badge: 'Refurbished',
     },
@@ -92,7 +83,7 @@ export default function ProductsPage() {
       name: 'HP LaserJet Printer',
       specs: 'High-Speed | Duplex | Network',
       condition: 'New',
-      image: 'printer-1',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/HP%20LaserJet%20Printer%20High-Speed%20%7C%20Duplex%20%7C%20Network%20%20.png',
       price: 'Contact for price',
       badge: 'Business Grade',
     },
@@ -100,7 +91,7 @@ export default function ProductsPage() {
       name: 'CCTV Camera System',
       specs: '4 Cameras | HD | Night Vision',
       condition: 'New',
-      image: 'cctv-1',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/CCTV%20Camera%20System%204%20Cameras%20%7C%20HD%20%7C%20Night%20Vision.png',
       price: 'Contact for price',
       badge: 'Complete Kit',
     },
@@ -108,21 +99,21 @@ export default function ProductsPage() {
       name: 'Asus Laptop',
       specs: 'Intel i3 | 4GB RAM | 500GB HDD',
       condition: 'Refurbished',
-      image: 'laptop-3',
+      image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/Asus%20Laptop%20Intel%20i3%20%7C%204GB%20RAM%20%7C%20500GB%20HDD%20%20.png',
       price: 'Best Deal',
       badge: 'Budget Friendly',
     },
   ];
 
   const brands = [
-    'HP',
-    'Dell',
-    'Asus',
-    'Lenovo',
-    'Acer',
-    'Canon',
-    'Epson',
-    'Brother',
+    { name: 'HP', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/HP.png' },
+    { name: 'Dell', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Dell.png' },
+    { name: 'Asus', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/ASUS.png' },
+    { name: 'Lenovo', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Lenovo.png' },
+    { name: 'Acer', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Acer.png' },
+    { name: 'Canon', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Canon.png' },
+    { name: 'Epson', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Epson.png' },
+    { name: 'Brother', image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/products/brands/Brother.png' },
   ];
 
   const benefits = [
@@ -324,11 +315,11 @@ export default function ProductsPage() {
 
                 <div className="relative glass-morphism rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
                   <motion.div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl shadow-lg mb-4`}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg mb-4"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <category.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    <img src={category.image} alt={category.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </motion.div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
@@ -389,23 +380,12 @@ export default function ProductsPage() {
                 />
 
                 <div className="relative h-full glass-morphism rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
-                  <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-32 h-32 bg-gradient-to-br from-gold-400/30 to-bronze-500/30 rounded-full flex items-center justify-center">
-                        {product.image.includes('laptop') && (
-                          <Laptop className="w-16 h-16 text-gold-700" strokeWidth={1.5} />
-                        )}
-                        {product.image.includes('desktop') && (
-                          <Monitor className="w-16 h-16 text-gold-700" strokeWidth={1.5} />
-                        )}
-                        {product.image.includes('printer') && (
-                          <Printer className="w-16 h-16 text-gold-700" strokeWidth={1.5} />
-                        )}
-                        {product.image.includes('cctv') && (
-                          <Camera className="w-16 h-16 text-gold-700" strokeWidth={1.5} />
-                        )}
-                      </div>
-                    </div>
+                  <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden flex items-center justify-center">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    />
 
                     <div className="absolute top-4 right-4">
                       <span
@@ -570,7 +550,9 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-gray-800">{brand}</h3>
+                <div className="flex items-center justify-center h-12">
+                  <img src={brand.image} alt={brand.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                </div>
               </motion.div>
             ))}
           </div>
