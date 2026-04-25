@@ -547,15 +547,15 @@ export default function ProductsPage() {
             {brands.map((brand, index) => (
               <motion.div
                 key={index}
-                className="glass-morphism rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all border-2 border-white/40 grayscale hover:grayscale-0"
+                className="glass-morphism rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all border-2 border-white/40"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.05 }}
               >
-                <div className="flex items-center justify-center h-12">
-                  <img src={brand.image} alt={brand.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                <div className="flex items-center justify-center h-20">
+                  <img src={brand.image} alt={brand.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                 </div>
               </motion.div>
             ))}
