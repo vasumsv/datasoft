@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
 
 export default function ServicesList() {
   const services = [
@@ -7,31 +6,26 @@ export default function ServicesList() {
       image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Laptop%20Repair.png',
       title: 'Laptop Repair',
       description: 'Screen replacement, battery issues, hardware upgrades',
-      color: 'from-gold-500 to-gold-600',
     },
     {
       image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Desktop%20Repair.png',
       title: 'Desktop Repair',
       description: 'Component replacement, system upgrades, troubleshooting',
-      color: 'from-bronze-500 to-bronze-600',
     },
     {
       image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Printer%20Service.png',
       title: 'Printer Service',
       description: 'Repair, maintenance, cartridge replacement',
-      color: 'from-gold-600 to-bronze-500',
     },
     {
       image: 'https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/Professional%20services%20/Server%20Setup.png',
       title: 'Server Setup',
       description: 'Configuration, maintenance, network solutions',
-      color: 'from-gold-500 to-gold-700',
     },
     {
       image: 'http://github.com/vasumsv/Vnova-Technologies/blob/main/vg%20computers/Professional%20services%20/CCTV%20Installation.png?raw=true',
       title: 'CCTV Installation',
       description: 'Complete installation, maintenance, monitoring',
-      color: 'from-bronze-600 to-gold-600',
     },
   ];
 
@@ -65,46 +59,48 @@ export default function ServicesList() {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto space-y-6">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="group"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="group relative"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ x: 10 }}
+              whileHover={{ y: -8 }}
             >
-              <div className="relative">
-                <motion.div
-                  className="absolute -inset-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"
-                />
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"
+              />
 
-                <div className="relative glass-morphism rounded-2xl p-6 lg:p-8 border-2 border-white/40 group-hover:border-gold-300/60 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <motion.div
-                      className="rounded-2xl flex items-center justify-center"
-                      style={{ width: '96px', height: '96px' }}
-                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <img src={service.image} alt={service.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-                    </motion.div>
-                  </div>
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 border-2 border-white/40 group-hover:border-gold-300/60 bg-white/80 backdrop-blur-sm flex flex-col">
+                {/* Image top */}
+                <div className="w-full overflow-hidden flex-shrink-0" style={{ height: '180px' }}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    style={{ width: '100%', height: '180px', objectFit: 'cover' }}
+                  />
+                </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <div className="flex-shrink-0 hidden sm:block">
-                    <CheckCircle className="w-8 h-8 text-gold-600 group-hover:scale-125 transition-transform" />
-                  </div>
+                {/* Content below */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1">
+                    {service.description}
+                  </p>
+                  <motion.div
+                    className="mt-4"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '60px' }}
+                    transition={{ delay: index * 0.1 + 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="h-1 bg-gradient-to-r from-gold-500 to-bronze-500 rounded-full group-hover:w-full transition-all duration-500"></div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
