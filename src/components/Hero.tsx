@@ -150,11 +150,18 @@ export default function Hero() {
                 />
 
                 <div className="relative glass-morphism rounded-3xl p-8 shadow-2xl">
-                  <div className="rounded-2xl flex items-center justify-center relative overflow-hidden" style={{ height: '360px' }}>
+                  <div
+                    className="rounded-2xl flex items-center justify-center"
+                    style={{
+                      background: 'linear-gradient(135deg, #f5c04a, #e09a2d)',
+                      padding: '20px',
+                      minHeight: '320px',
+                    }}
+                  >
                     <img
                       src="https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/home%20page%20.png"
                       alt="Technology Excellence"
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
                     />
                   </div>
                 </div>
