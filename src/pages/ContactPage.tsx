@@ -90,7 +90,7 @@ export default function ContactPage() {
       title: 'Address',
       content: 'Adishakti Temple, Veeragangadhar Complex, Medleri Road, Ranebennur, Karnataka',
       action: 'Get Directions',
-      link: 'https://maps.google.com/?q=Adishakti+Temple+Veeragangadhar+Complex+Medleri+Road+Ranebennur',
+      link: 'https://maps.app.goo.gl/Ps9DLM2SnMDp2jGa7',
     },
     {
       icon: Phone,
@@ -272,7 +272,7 @@ export default function ContactPage() {
           >
             <div className="aspect-video w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.5!2d75.6292!3d14.6186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM3JzA3LjAiTiA3NcKwMzcnNDUuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://maps.google.com/maps?q=Adishakti+Temple+Veeragangadhar+Complex+Medleri+Road+Ranebennur+Karnataka&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -290,7 +290,7 @@ export default function ContactPage() {
                   <p className="text-gray-600">Located at Adishakti Temple, Veeragangadhar Complex, Ranebennur</p>
                 </div>
                 <motion.a
-                  href="https://maps.google.com/?q=Adishakti+Temple+Veeragangadhar+Complex+Medleri+Road+Ranebennur"
+                  href="https://maps.app.goo.gl/Ps9DLM2SnMDp2jGa7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-gold-500 to-bronze-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
@@ -450,7 +450,7 @@ export default function ContactPage() {
               </motion.a>
 
               <motion.a
-                href="https://maps.google.com/?q=Adishakti+Temple+Veeragangadhar+Complex+Medleri+Road+Ranebennur"
+                href="https://maps.app.goo.gl/Ps9DLM2SnMDp2jGa7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-2 px-10 py-5 bg-gray-900 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all text-lg"
