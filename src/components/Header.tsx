@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, Cpu } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
@@ -59,12 +59,11 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-bronze-500 rounded-xl blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative w-12 h-12 bg-gradient-to-br from-gold-500 to-bronze-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <Cpu className="w-6 h-6 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
+              <img
+                src="https://raw.githubusercontent.com/vasumsv/Vnova-Technologies/refs/heads/main/vg%20computers/datasoft-logo.png"
+                alt="Datasoft Computers"
+                className="h-12 w-auto object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-700 bg-clip-text text-transparent">
                   Datasoft Computers
