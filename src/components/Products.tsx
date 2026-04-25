@@ -99,37 +99,38 @@ export default function Products() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
               viewport={{ once: true }}
-              whileHover={{ y: -12, scale: 1.05 }}
+              whileHover={{ y: -8 }}
             >
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"
               />
 
-              <div className="relative h-full glass-morphism rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white/40 group-hover:border-gold-300/60">
-                <motion.div
-                  className="flex items-center justify-center rounded-xl mb-4"
-                  style={{ width: '96px', height: '96px' }}
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <img src={product.image} alt={product.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-                </motion.div>
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white/40 group-hover:border-gold-300/60 bg-white/80 backdrop-blur-sm flex flex-col">
+                {/* Image top */}
+                <div className="w-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-gold-50 to-bronze-50" style={{ height: '160px' }}>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    style={{ width: '100%', height: '160px', objectFit: 'cover' }}
+                  />
+                </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
-                  {product.title}
-                </h3>
-
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {product.description}
-                </p>
-
-                <motion.div
-                  className="mt-4 h-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-full"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '100%' }}
-                  transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
-                  viewport={{ once: true }}
-                />
+                {/* Content below */}
+                <div className="p-4 flex flex-col flex-1">
+                  <h3 className="text-base font-bold text-gray-900 mb-1 group-hover:text-gold-700 transition-colors">
+                    {product.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs leading-relaxed flex-1">
+                    {product.description}
+                  </p>
+                  <motion.div
+                    className="mt-3 h-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '100%' }}
+                    transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  />
+                </div>
               </div>
             </motion.div>
           ))}

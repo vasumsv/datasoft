@@ -312,45 +312,45 @@ export default function ServicesPage() {
                   whileHover={{ scale: 1.05 }}
                 />
 
-                <div className="relative h-full glass-morphism rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
-                  <motion.div
-                    className="flex items-center justify-center rounded-2xl mb-6"
-                    style={{ width: '96px', height: '96px' }}
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <img src={service.image} alt={service.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-                  </motion.div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gold-700 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-gold-600 mr-2 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <motion.button
-                    className="w-full flex items-center justify-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-gold-500 to-bronze-600 text-white rounded-xl font-semibold shadow-md group-hover:shadow-lg transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => {
-                      setFormData({ ...formData, service: service.title });
-                      window.location.href = '#contact-form';
-                    }}
-                  >
-                    <span>Request Service</span>
-                    <ArrowRight
-                      size={18}
-                      className="group-hover:translate-x-1 transition-transform"
+                <div className="relative h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40 bg-white/80 backdrop-blur-sm flex flex-col">
+                  {/* Image top */}
+                  <div className="w-full overflow-hidden flex-shrink-0" style={{ height: '180px' }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      style={{ width: '100%', height: '180px', objectFit: 'cover' }}
                     />
-                  </motion.button>
+                  </div>
+
+                  {/* Content below */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gold-700 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm mb-4">{service.description}</p>
+
+                    <ul className="space-y-1.5 mb-5 flex-1">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 text-gold-600 mr-2 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <motion.button
+                      className="w-full flex items-center justify-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-gold-500 to-bronze-600 text-white rounded-xl font-semibold shadow-md group-hover:shadow-lg transition-all"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => {
+                        setFormData({ ...formData, service: service.title });
+                        window.location.href = '#contact-form';
+                      }}
+                    >
+                      <span>Request Service</span>
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             ))}

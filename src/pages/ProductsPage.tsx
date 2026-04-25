@@ -381,11 +381,11 @@ export default function ProductsPage() {
                 />
 
                 <div className="relative h-full glass-morphism rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40">
-                  <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden flex items-center justify-center">
+                  <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
 
                     <div className="absolute top-4 right-4">

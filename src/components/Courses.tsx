@@ -81,48 +81,45 @@ export default function Courses() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -8 }}
             >
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-gold-400 to-bronze-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"
-                whileHover={{ scale: 1.05 }}
               />
 
-              <div className="relative h-full glass-morphism rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40 overflow-hidden">
-                <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${course.color} opacity-10 rounded-bl-full transition-all duration-500 group-hover:scale-150 group-hover:opacity-20`}></div>
+              <div className="relative h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/40 group-hover:border-gold-300/60 bg-white/80 backdrop-blur-sm flex flex-col">
+                {/* Image top */}
+                <div className="w-full overflow-hidden flex-shrink-0" style={{ height: '180px' }}>
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    style={{ width: '100%', height: '180px', objectFit: 'cover' }}
+                  />
+                </div>
 
-                <div className="relative z-10 space-y-6">
-                  <motion.div
-                    className="flex items-center justify-center rounded-2xl mb-2"
-                    style={{ width: '96px', height: '96px' }}
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <img src={course.image} alt={course.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-                  </motion.div>
-
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gold-700 transition-colors">
+                {/* Content below */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-gold-700 transition-colors">
                       {course.title}
                     </h3>
-
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {course.description}
-                    </p>
-
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <Clock size={16} className="text-gold-600" />
-                      <span className="font-semibold">Duration: {course.duration}</span>
+                    <div className="flex items-center space-x-1 text-xs text-gray-500 flex-shrink-0 ml-2">
+                      <Clock size={13} className="text-gold-600" />
+                      <span className="font-semibold">{course.duration}</span>
                     </div>
                   </div>
 
+                  <p className="text-gray-600 leading-relaxed text-sm flex-1 mb-5">
+                    {course.description}
+                  </p>
+
                   <motion.button
-                    className={`w-full flex items-center justify-center space-x-2 px-6 py-3.5 bg-gradient-to-r ${course.color} text-white rounded-xl font-semibold shadow-md group-hover:shadow-lg transition-all relative overflow-hidden`}
+                    className={`w-full flex items-center justify-center space-x-2 px-5 py-3 bg-gradient-to-r ${course.color} text-white rounded-xl font-semibold shadow-md group-hover:shadow-lg transition-all`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="relative z-10">Enroll Now</span>
-                    <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                    <span>Enroll Now</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </div>
               </div>
